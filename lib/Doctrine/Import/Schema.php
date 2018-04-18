@@ -283,8 +283,13 @@ class Doctrine_Import_Schema
             if ( ! empty($models) && !in_array($definition['className'], $models)) {
                 continue;
             }
-            
+
+            if (!empty($definition['options']['baseClassName'])) {
+                $builder->setOption('baseClassName', $definition['options']['symfony']['baseClassName']);
+            }
+
             $builder->buildRecord($definition);
+            $builder->setOptions($this->getOptions());
         }
     }
 
