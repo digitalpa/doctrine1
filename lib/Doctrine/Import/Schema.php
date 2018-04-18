@@ -285,7 +285,7 @@ class Doctrine_Import_Schema
             }
 
             if (!empty($definition['options']['baseClassName'])) {
-                $builder->setOption('baseClassName', $definition['options']['symfony']['baseClassName']);
+                $builder->setOption('baseClassName', $definition['options']['baseClassName']);
             }
 
             $builder->buildRecord($definition);
